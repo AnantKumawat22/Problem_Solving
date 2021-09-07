@@ -1,0 +1,1 @@
+return abs(x - z) < abs(y - z) ? "Cat A" : abs(x - z) > abs(y - z) ? "Cat B" : "Mouse C";
