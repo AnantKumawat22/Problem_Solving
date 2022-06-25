@@ -1,11 +1,9 @@
 int missingNumber(vector<int> &nums)
 {
-    int sumofi = 0, sumofele = 0;
+    int n = nums.size(), sumele = 0, total;
+    total = n * (n + 1) / 2;
 
-    for (int i = 1; i <= nums.size(); i++)
-    {
-        sumofi += i;
-        sumofele += nums[i - 1];
-    }
-    return sumofi - sumofele;
+    for (int i = 0; i < n; i++)
+        sumele += nums[i];
+    return total - sumele;
 }

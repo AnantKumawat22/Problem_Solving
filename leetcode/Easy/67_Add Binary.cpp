@@ -1,6 +1,6 @@
 string addBinary(string a, string b)
 {
-    int i, j, r, carry = 0, sum = 0, first, second;
+    int i, j, carry = 0, sum, first, second;
     string s = "";
 
     i = a.length() - 1;
@@ -8,20 +8,11 @@ string addBinary(string a, string b)
 
     while (i != -1 || j != -1 || carry)
     {
-        if (i != -1)
-            first = int(a[i--] - 48);
-        else
-            first = 0;
-
-        if (j != -1)
-            second = int(b[j--] - 48);
-        else
-            second = 0;
+        first = (i != -1) ? a[i--] - '0' : 0;
+        second = (j != -1) ? b[j--] - '0' : 0;
 
         sum = first + second + carry;
-
-        r = sum % 2;
-        s.insert(0, to_string(r));
+        s.insert(0, to_string(sum % 2));
         carry = sum / 2;
     }
     return s;
