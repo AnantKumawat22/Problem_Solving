@@ -2,14 +2,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
     int T, N;
     string str, s;
     cin >> T;
 
-    while (T--)
-    {
+    while (T--){
         int x = 0, y = 1, min = INT_MAX;
         cin >> N;
         str = to_string(N);

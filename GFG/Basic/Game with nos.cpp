@@ -1,5 +1,14 @@
-for (int i = 0; i < n - 1; i++)
-{
-    arr[i] = (arr[i] | arr[i + 1]) - (arr[i] & arr[i + 1]);
+// Without using XOR operator.
+int* game_with_number(int arr[], int n){
+    for (int i = 0; i < n - 1; i++)
+      arr[i] = (arr[i] | arr[i+1]) - (arr[i] & arr[i+1]);
+    return arr;
 }
-return arr;
+
+
+// Using XOR operator.
+int* game_with_number(int arr[], int n){
+    for(int i = 0; i < n - 1; i++)
+        arr[i] ^= arr[i + 1];
+    return arr;
+}

@@ -1,11 +1,9 @@
 vector<int> circularArrayRotation(vector<int> a, int k, vector<int> queries) {
     vector<int> vect;
+    int n = a.size();
     
-    while(k--){
-        a.insert(a.begin(), a[a.size() - 1]);
-        a.pop_back();
-    }
-    for (auto x: queries)
-        vect.push_back(a[x]);
+    for(auto x: queries) vect.push_back(a[(n - (k % n) + x) % n]);
     return vect;
 }
+
+// Explanation in Image: Circular Array Rotation.jpg
