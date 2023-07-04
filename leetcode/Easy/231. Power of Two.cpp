@@ -24,3 +24,16 @@ public:
         return n <= 0 ? false : (n & (n-1)) == 0;
     }
 };
+
+// Alter method - built in method.
+
+// __builtin_popcount(n) will return the number of set bits in the number.
+
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+        if(n <= 0) return false;
+        int ans = __builtin_popcount(n);
+        return ans > 1 ? false : true;
+    }
+};
